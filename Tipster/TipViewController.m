@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipPercentageControl;
 @property (weak, nonatomic) IBOutlet UIView *labelsContainerView;
+@property int textLen;
 
 @end
 
@@ -21,18 +22,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self hideLabels];
+    self.textLen = 0;
 }
 
 - (IBAction)onTap:(id)sender {
-    NSLog(@"hello");
-    
     [self.view endEditing:true];
 }
 
+- (IBAction)startEdit:(id)sender {
+    NSLog(@"started editing");
+}
+
 - (IBAction)updateLabels:(id)sender {
-    if (self.billAmountField.text.length == 0) {
+    if (self.textLen == 0){
+        [self showLabels];
+    } else if (self.textLen != 0 && self.billAmountField.text.length == 0){
         [self hideLabels];
     }
+    
+    self.textLen = self.billAmountField.text.length;
+    
     double tipPercentages[] = {0.15, 0.2, 0.25};
     double tipPercentage = tipPercentages[self.tipPercentageControl.selectedSegmentIndex];
     
@@ -40,8 +50,8 @@
     double tip = bill * tipPercentage;
     double total = bill + tip;
     
-    self.tipLabel.text = [NSString stringWithFormat:@"$%.2f", tip];
-    self.totalLabel.text = [NSString stringWithFormat:@"$%.2f", total];
+    self.tipLabel.text = [NSString stringWithFormat:@"tip: %.2f", tip];
+    self.totalLabel.text = [NSString stringWithFormat:@"total: %.2f", total];
 }
 
 - (void)hideLabels {
@@ -55,6 +65,20 @@
         self.labelsContainerView.frame = labelsFrame;
         
         self.labelsContainerView.alpha = 0;
+    }];
+}
+
+- (void)showLabels {
+    [UIView animateWithDuration:0.5 animations:^{
+        CGRect billFrame = self.billAmountField.frame;
+        billFrame.origin.y -= 200;
+        self.billAmountField.frame = billFrame;
+        
+        CGRect labelsFrame = self.labelsContainerView.frame;
+        labelsFrame.origin.y -= 200;
+        self.labelsContainerView.frame = labelsFrame;
+        
+        self.labelsContainerView.alpha = 1;
     }];
 }
 
