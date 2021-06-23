@@ -16,6 +16,7 @@
 		7C6F128726826E4800325666 /* TipsterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F128626826E4800325666 /* TipsterTests.m */; };
 		7C6F129226826E4800325666 /* TipsterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F129126826E4800325666 /* TipsterUITests.m */; };
 		7C6F12A126827D4600325666 /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F12A026827D4600325666 /* TipViewController.m */; };
+		7C6F12A42682A43500325666 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F12A32682A43500325666 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		7C6F129326826E4800325666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C6F129F26827D4600325666 /* TipViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TipViewController.h; sourceTree = "<group>"; };
 		7C6F12A026827D4600325666 /* TipViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipViewController.m; sourceTree = "<group>"; };
+		7C6F12A22682A43500325666 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		7C6F12A32682A43500325666 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				7C6F126D26826E4700325666 /* SceneDelegate.h */,
 				7C6F126E26826E4700325666 /* SceneDelegate.m */,
 				7C6F127326826E4700325666 /* Main.storyboard */,
+				7C6F12A22682A43500325666 /* SettingsViewController.h */,
+				7C6F12A32682A43500325666 /* SettingsViewController.m */,
 				7C6F129F26827D4600325666 /* TipViewController.h */,
 				7C6F12A026827D4600325666 /* TipViewController.m */,
 				7C6F127626826E4800325666 /* Assets.xcassets */,
@@ -268,6 +273,7 @@
 			files = (
 				7C6F126C26826E4700325666 /* AppDelegate.m in Sources */,
 				7C6F127D26826E4800325666 /* main.m in Sources */,
+				7C6F12A42682A43500325666 /* SettingsViewController.m in Sources */,
 				7C6F12A126827D4600325666 /* TipViewController.m in Sources */,
 				7C6F126F26826E4700325666 /* SceneDelegate.m in Sources */,
 			);
